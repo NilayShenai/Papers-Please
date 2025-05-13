@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Minimal Dark Theme */
+@layer base {
+  :root {
+    /* Light theme (fallback, but dark is default) */
+    --background: 0 0% 100%; /* White */
+    --foreground: 224 71.4% 4.1%; /* Almost Black */
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 217 91% 60%; /* Muted Blue Primary */
+    --primary-foreground: 210 20% 98%; /* Almost White */
+    --secondary: 220 14.3% 95.9%; /* Light Gray Secondary */
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%; /* Lighter Gray Border */
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%; /* Muted Blue Ring */
+    --chart-1: 217 91% 60%;
+    --chart-2: 180 60% 45%;
+    --chart-3: 30 75% 55%;
+    --chart-4: 280 60% 65%;
+    --chart-5: 0 70% 60%;
+    --radius: 0.5rem; /* Slightly increased radius */
+  }
+
+  .dark {
+    --background: 222 47.4% 11.2%; /* Dark Blueish Gray */
+    --foreground: 210 40% 98%; /* Light Grayish Blue */
+    --card: 222 47.4% 14.2%; /* Slightly Lighter Card */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47.4% 11.2%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 180 82.8% 70.8%; /* Cyan */
+    --primary-foreground: 222 47.4% 11.2%; /* Primary Text */
+    --secondary: 217.2 32.6% 17.5%; /* Darker Gray */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%; /* Lighter Muted Foreground */
+    --accent: 180 82.8% 70.8%; /* Cyan accent */
+    --accent-foreground: 222 47.4% 11.2%; /* Accent Text */
+    --destructive: 0 62.8% 50.6%; /* Muted Destructive Red */
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%; /* Darker Gray Border */
+    --input: 217.2 32.6% 17.5%; /* Input matches border */
+    --ring: 180 82.8% 70.8%; /* Cyan ring */
+    --chart-1: 180 82.8% 70.8%;
+    --chart-2: 217 91% 65%;
+    --chart-3: 35 80% 60%;
+    --chart-4: 280 65% 70%;
+    --chart-5: 0 75% 65%;
+    --radius: 0.5rem; /* Slightly increased radius */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    /* Remove gradient for a solid minimal background */
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+}
+
+/* Subtle fade-in animation */
+@layer utilities {
+  @keyframes subtle-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animate-subtle-fade-in {
+    animation: subtle-fade-in 0.5s ease-out forwards;
+  }
+}
+
+/* Improve focus rings for accessibility */
+*:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 1px; /* Closer offset */
+}
