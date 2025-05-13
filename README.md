@@ -21,7 +21,7 @@ Now available on Docker Hub:
 
 ## Images
 
-![Demo UI]()
+![Demo UI](https://github.com/NilayShenai/Papers-Please/blob/main/imgs/image.png)
 
 ---
 
