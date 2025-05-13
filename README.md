@@ -5,6 +5,9 @@
 Now available on Docker Hub:
 [https://hub.docker.com/r/nilayshenai/papers-please](https://hub.docker.com/r/nilayshenai/papers-please)
 
+Access the site here:
+[https://papers.000196.xyz/](https://papers.000196.xyz/)
+
 ---
 
 ## Features
